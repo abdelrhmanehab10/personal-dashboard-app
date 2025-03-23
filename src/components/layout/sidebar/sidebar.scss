@@ -1,0 +1,151 @@
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  transition: width 0.3s ease;
+  background-color: #fff;
+  border-right: 1px solid #eee;
+  
+  @media (max-width: 768px) {
+    width: 100px;
+    
+    .sidebar-content {
+      .logo {
+        .toggle-btn {
+          display: none;
+        }
+      }
+      
+      .nav-list {
+        .nav-link {
+          .nav-item {
+            justify-content: center;
+            
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  &.collapsed {
+    width: 100px;
+    
+    .sidebar-content {
+      .nav-list {
+        .nav-link {
+          .nav-item {
+            justify-content: center;
+            
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .sidebar-content {
+    padding: 1.5rem;
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      
+      .logo-text {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #4a6cf7;
+        letter-spacing: -0.5px;
+        background: linear-gradient(135deg, #4a6cf7, #2451e6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      
+      .toggle-btn {
+        background: none;
+        border: none;
+        color: #666;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 8px;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+        
+        &:hover {
+          background-color: #f5f7fe;
+          color: #4a6cf7;
+        }
+        
+        .MuiSvgIcon-root {
+          font-size: 1.5rem;
+          transition: transform 0.3s ease;
+          
+          &.rotate {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+    
+    nav {
+      .nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        .nav-link {
+          text-decoration: none;
+          color: inherit;
+          display: block;
+          
+          &.active {
+            .nav-item {
+              background-color: #4a6cf7;
+              color: #fff;
+              
+              .MuiSvgIcon-root {
+                color: #fff;
+              }
+            }
+          }
+        }
+
+        .nav-item {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          padding: 0.75rem 1rem;
+          margin-bottom: 0.5rem;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          color: #666;
+          
+          .MuiSvgIcon-root {
+            font-size: 1.5rem;
+            transition: color 0.2s ease;
+          }
+          
+          span {
+            font-size: 0.95rem;
+          }
+          
+          &:hover {
+            background-color: #f5f7fe;
+            color: #4a6cf7;
+            
+            .MuiSvgIcon-root {
+              color: #4a6cf7;
+            }
+          }
+        }
+      }
+    }
+  }
+}
