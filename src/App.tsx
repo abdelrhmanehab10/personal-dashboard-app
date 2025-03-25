@@ -4,6 +4,8 @@ import "./App.scss";
 import WeatherPage from "./pages/weather/weather";
 import { Route, Routes } from "react-router";
 import TodoPage from "./pages/todo/todo";
+import NewsPage from "./pages/news/news";
+import HomePage from "./pages/home/home";
 
 function App() {
   return (
@@ -13,8 +15,10 @@ function App() {
         <Header />
         <main>
           <Routes>
+            <Route index element={<HomePage />} />
             <Route path="weather" element={<WeatherPage />} />
             <Route path="todo" element={<TodoPage />} />
+            <Route path="news" element={<NewsPage />} />
           </Routes>
         </main>
       </div>

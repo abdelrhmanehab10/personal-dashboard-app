@@ -1,4 +1,4 @@
-import { Cloud, Home, List, MenuOpen } from "@mui/icons-material";
+import { Cloud, Home, List, MenuOpen, Newspaper } from "@mui/icons-material";
 import "./sidebar.scss";
 import { NavLink } from "react-router";
 import { useSidebar } from "../../../hooks/useSidebar";
@@ -7,18 +7,19 @@ const routes = [
   { path: "", label: "Home", icon: Home },
   { path: "weather", label: "Weather", icon: Cloud },
   { path: "todo", label: "To Do", icon: List },
+  { path: "news", label: "News", icon: Newspaper },
 ];
 
 const Sidebar = () => {
   const { isOpen, toggle } = useSidebar();
 
   return (
-    <aside className={`sidebar ${!isOpen ? 'collapsed' : ''}`}>
+    <aside className={`sidebar ${!isOpen ? "collapsed" : ""}`}>
       <div className="sidebar-content">
         <div className="logo">
           <span className="logo-text">PD</span>
           <button className="toggle-btn" onClick={toggle}>
-            <MenuOpen className={!isOpen ? 'rotate' : ''} />
+            <MenuOpen className={!isOpen ? "rotate" : ""} />
           </button>
         </div>
 
